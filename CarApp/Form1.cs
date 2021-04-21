@@ -18,6 +18,8 @@ namespace CarApp
             txtRegNr.Focus();
         }
 
+        
+        #region EVENTS
         /*        private void btnRemove_Click_Click(object sender, EventArgs e)
         {
 
@@ -27,8 +29,6 @@ namespace CarApp
         {
 
         }
-
-        #region EVENTS
         /// <summary>
         /// 
         /// </summary>
@@ -73,5 +73,7 @@ namespace CarApp
             txtRegNr.Focus();
         }
         #endregion EVENTS
+
+
     }
 }
