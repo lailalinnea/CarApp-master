@@ -74,6 +74,15 @@ namespace CarApp
         }
         #endregion EVENTS
 
+        private void ClearTextboxes()
+        {
+            throw new NotImplementedException();
+        }
+
+        private ListViewItem CreateListViewItem(string text1, string text2, bool @checked)
+        {
+            throw new NotImplementedException();
+        }
 
     }
 }

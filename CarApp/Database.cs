@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SQLite;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -93,5 +94,15 @@ namespace CarApp
             return result;
         }
 
-    }
+        public int RemoveAllCars()
+        {
+            string qDelete = "DELETE FROM car;"; 
+
+            SQLiteCommand dbCommand = new SQLiteCommand(qDelete, dbConn); 
+            OpenConnection();
+
+            int result = dbCommand.ExecuteNonQuery();
+            CloseConnection();
+            return result;}
+        }
 }
