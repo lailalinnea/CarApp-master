@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -25,17 +26,13 @@ namespace CarApp
 
 
         #region EVENTS
-        /*private void label1_Click(object sender, EventArgs e)
-        {
 
-        }
-        
-        private void btnRemove_Click_Click(object sender, EventArgs e)
+        /*private void btnRemove_Click_Click(object sender, EventArgs e)
         {
 
         }*/
 
-        
+
         /// <summary>
         /// 
         /// </summary>
@@ -61,8 +58,12 @@ namespace CarApp
             }
             else
             {
-                ListViewItem item = CreateListViewItem(txtRegNr.Text, txtMake.Text, cbxForSale.Checked);
-                lsvCars.Items.Add(item);
+                Car car = new Car(txtRegNr.Text, txtMake.Text, txtModell.Text, Convert.ToInt32(txtYear.Text), cbxForSale.Checked);
+                AddCarToListView(car);
+
+                int result = dbObject.AddCarRow(car);
+                MessageBox.Show("You have added " + Convert.ToString(result) + " number of cars");
+
                 ClearTextboxes();
                 btnClear.Enabled = true;
             }
@@ -124,7 +125,7 @@ namespace CarApp
 
             try
             {
-                WebRequest request = httpWebRequest.Create(call);
+                WebRequest request = HttpWebRequest.Create(call);
 
                 WebResponse response = request.GetResponse();
 
@@ -135,8 +136,8 @@ namespace CarApp
                 JObject jsonCar = JObject.Parse(carJSON);
 
                 txtMake.Text = jsonCar["data"]["basic"]["data"]["make"].ToString();
-                txtModell.Text = jsonCar["data"]["basic"]["data"]["modell"].ToString();
-                txtYear.Text = jsonCar["data"]["basic"]["data"]["modell_year"].ToString();
+                txtModell.Text = jsonCar["data"]["basic"]["data"]["model"].ToString();
+                txtYear.Text = jsonCar["data"]["basic"]["data"]["model_year"].ToString();
             }
             catch (Exception e)
             {
@@ -144,11 +145,23 @@ namespace CarApp
             }
         }
 
-        private ListViewItem CreateListViewItem(string regNr, string make, bool forSale)
+        private ListViewItem CreateListViewItem(Car car)
         {
-            ListViewItem item = new ListViewItem(regNr);
-            item.SubItems.Add(make);
-            item.SubItems.Add(forSale ? "Yes" : "No");
+            ListViewItem item = new ListViewItem(car.GetRegNr());
+            item.SubItems.Add(car.GetMake());
+            item.SubItems.Add(car.GetForSale() ? "Yes" : "No");
+            item.SubItems.Add(car.GetModel());
+            item.SubItems.Add(car.GetYear().ToString());
+
+            /*if (forSale == true)
+            {
+                item.SubItems.Add("Yes");
+            }
+            else
+            {
+                item.SubItems.Add("No");
+            }*/
+
             return item;
         }
 

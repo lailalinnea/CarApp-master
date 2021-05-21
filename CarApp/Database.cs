@@ -69,7 +69,7 @@ namespace CarApp
                 while( res.Read() ) 
                 {
                     Car car = new Car(Convert.ToString(res["regNr"]),
-                        Convert.ToString(res["maid"]),
+                        Convert.ToString(res["make"]),
                         Convert.ToString(res["model"]),
                         Convert.ToInt32(res["year"]),
                         Convert.ToBoolean(res["forSale"]));

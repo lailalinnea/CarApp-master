@@ -45,6 +45,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnRemove = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -79,6 +80,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnSearch);
             this.groupBox1.Controls.Add(this.cbxForSale);
             this.groupBox1.Controls.Add(this.btnAdd);
             this.groupBox1.Controls.Add(this.txtModell);
@@ -98,7 +100,7 @@
             // cbxForSale
             // 
             this.cbxForSale.AutoSize = true;
-            this.cbxForSale.Location = new System.Drawing.Point(577, 35);
+            this.cbxForSale.Location = new System.Drawing.Point(253, 94);
             this.cbxForSale.Name = "cbxForSale";
             this.cbxForSale.Size = new System.Drawing.Size(95, 24);
             this.cbxForSale.TabIndex = 9;
@@ -107,7 +109,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(577, 80);
+            this.btnAdd.Location = new System.Drawing.Point(579, 86);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(113, 37);
             this.btnAdd.TabIndex = 8;
@@ -117,28 +119,28 @@
             // 
             // txtModell
             // 
-            this.txtModell.Location = new System.Drawing.Point(393, 39);
+            this.txtModell.Location = new System.Drawing.Point(307, 36);
             this.txtModell.Name = "txtModell";
             this.txtModell.Size = new System.Drawing.Size(137, 26);
             this.txtModell.TabIndex = 7;
             // 
             // txtYear
             // 
-            this.txtYear.Location = new System.Drawing.Point(393, 88);
+            this.txtYear.Location = new System.Drawing.Point(89, 91);
             this.txtYear.Name = "txtYear";
             this.txtYear.Size = new System.Drawing.Size(137, 26);
             this.txtYear.TabIndex = 6;
             // 
             // txtMake
             // 
-            this.txtMake.Location = new System.Drawing.Point(107, 91);
+            this.txtMake.Location = new System.Drawing.Point(540, 36);
             this.txtMake.Name = "txtMake";
             this.txtMake.Size = new System.Drawing.Size(137, 26);
             this.txtMake.TabIndex = 5;
             // 
             // txtRegNr
             // 
-            this.txtRegNr.Location = new System.Drawing.Point(107, 39);
+            this.txtRegNr.Location = new System.Drawing.Point(89, 39);
             this.txtRegNr.Name = "txtRegNr";
             this.txtRegNr.Size = new System.Drawing.Size(137, 26);
             this.txtRegNr.TabIndex = 4;
@@ -146,7 +148,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(299, 91);
+            this.label4.Location = new System.Drawing.Point(16, 94);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(43, 20);
             this.label4.TabIndex = 3;
@@ -155,16 +157,16 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(299, 39);
+            this.label3.Location = new System.Drawing.Point(249, 39);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(55, 20);
+            this.label3.Size = new System.Drawing.Size(52, 20);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Modell";
+            this.label3.Text = "Model";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(16, 97);
+            this.label2.Location = new System.Drawing.Point(471, 39);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(48, 20);
             this.label2.TabIndex = 1;
@@ -178,7 +180,6 @@
             this.label1.Size = new System.Drawing.Size(67, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Reg. Nr.";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // btnRemove
             // 
@@ -199,6 +200,16 @@
             this.btnClear.Text = "Clear all data";
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Location = new System.Drawing.Point(420, 86);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(113, 37);
+            this.btnSearch.TabIndex = 10;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click_1);
             // 
             // Form1
             // 
@@ -236,6 +247,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnRemove;
         private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Button btnSearch;
     }
 }
 
